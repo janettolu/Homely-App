@@ -47,11 +47,11 @@ Use PostGIS for location queries (optional)
 - Identity verification (ID upload + manual or third-party KYC)
 
 ## 3. System Communication Flow
-User interacts with the Frontend (e.g., searches for a house).
-The Frontend sends a reques to the Backend API (Node.js).
-3. The Backend **fetches data** from the Database (MongoDB).
-4. The Backend **returns** the filtered results to the Frontend.
-5. The Frontend **displays** listings, agents, or booking info to the user.
+- User interacts with the Frontend (e.g., searches for a house).
+- The Frontend sends a request to the Backend API (Node.js).
+- The Backend fetches data from the Database (MongoDB).
+- The Backend returns the filtered results to the Frontend.
+- The Frontend displays listings, agents, or booking info to the user.
 
 
 ## Deployment
