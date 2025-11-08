@@ -35,9 +35,9 @@ Homely builds trust into the rental system while making the process faster and m
 
 ## Tech (high level)
 Mobile first: 
-React Native (frontend),
-Node.js + Express (API), 
-PostgreSQL (database), 
-payment gateway (Flutterwave), 
+React Native (frontend)
+Node.js + Express (API) 
+PostgreSQL (database)
+payment gateway (Flutterwave)
 Map API (property location)
 
