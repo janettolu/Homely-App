@@ -1,0 +1,72 @@
+# Homely — System Architecture
+
+## High level overview
+Homely is a web and mobile platform that connects renters with verified landlords, agents and artisans
+It provides a transparent, traceable, and convenient rentals experience while digializing Nigeria's informal housing market.
+
+Homely is built with three main components:
+
+## Frontend
+Purpose: Displays all user interfaces (Renters, Agents, and Landlords)
+Tech Stack: 
+- React Native for mobile (single codebase iOS/Android)
+- React.js for web
+Responsibilities:
+- authorization, user registration and login
+- listing and agent profile browsing
+- chat UI and scheduling
+- Filtering homes by location, prce and type
+
+## Backend
+Purpose: Handles logic, authentication, and communication between frontend and database
+Tech Stack:
+- Node.js + Express
+- Auth: JWT + refresh tokens
+APIs:
+  - /auth, /users, /agents, /listings, /bookings, /payments, /chat
+- Real-time: Socket.io service for chat and live viewing updates
+
+## Database
+Purpose: Stores all user and property information
+Tech Stack:
+- PostgreSQL (primary)
+Data Stored: 
+- Users profiles
+- Agents
+- Listings (photos, price, location)
+- Bookings and chat history
+- Payments
+- Reviews and ratings
+- Artisan details
+Use PostGIS for location queries (optional)
+
+## Third-party services
+- Map API (Google map)
+- Payment provider (Flutterwave, paystack)
+- SMS/OTP (Twilio or local provider)
+- Identity verification (ID upload + manual or third-party KYC)
+
+## 3. System Communication Flow
+User interacts with the Frontend (e.g., searches for a house).
+The Frontend sends a reques to the Backend API (Node.js).
+3. The Backend **fetches data** from the Database (MongoDB).
+4. The Backend **returns** the filtered results to the Frontend.
+5. The Frontend **displays** listings, agents, or booking info to the user.
+
+
+## Deployment
+- Containerized apps (Docker)
+- CI/CD: GitHub Actions
+- Hosting: AWS (ECS/EC2) or Vercel for web
+- Backups: daily DB snapshots
+
+## Security & Feasibility
+- Data encryption at rest & transit (HTTPS/TLS)
+- Rate limiting, input validation, role-based access
+- Feasible because stacks are standard, scalable patterns, and third-party services reduce build time.
+
+
+
+
+
+
